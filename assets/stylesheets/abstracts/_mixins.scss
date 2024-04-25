@@ -1,0 +1,7 @@
+/* mixins */
+
+@mixin create-colors-var ($colorPalette) {
+  @each $key, $value in $colorPalette {
+    --color-#{$key}: #{$value}
+  }
+}

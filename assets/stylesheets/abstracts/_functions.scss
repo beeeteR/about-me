@@ -1,0 +1,25 @@
+/* functions */
+
+// Init
+@function generate-breakpoints-rule($breakpoints) {
+  $mapped-breakpoints: ();
+
+  @each $key, $value in $breakpoints {
+    $mapped-breakpoints: map-merge($mapped-breakpoints, ($key: 'screen and (min-width: ' + $value + ')'));
+  }
+
+  @return $mapped-breakpoints;
+}
+
+@function create-scss-colors-var($colorPalette) {
+  $colors: ();
+
+  @each $key, $value in $colorPalette {
+    $colors: map-merge(
+      $colors,
+      ($key: var(--color-#{$key}))
+    );
+  }
+
+  @return $colors;
+}

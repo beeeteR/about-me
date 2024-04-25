@@ -1,0 +1,7 @@
+[data-theme="light"] {
+  @include create-colors-var(map-get($themes, 'light'));
+}
+
+[data-theme="dark"] {
+  @include create-colors-var(map-get($themes, 'dark'));
+}
